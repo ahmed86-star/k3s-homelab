@@ -1,0 +1,25 @@
+# Terraform State Files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+terraform-plugin-proxmox.log
+
+# Sensitive Configuration Files
+terraform.tfvars
+terraform-proxmox.tfvars
+
+# Kubernetes Credentials
+kubeconfig.yaml
+k3s-token.txt
+
+# Proxmox Config (contains sensitive info)
+proxmox-config/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*-ssh-only.tf.bak

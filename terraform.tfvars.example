@@ -1,0 +1,17 @@
+# Terraform Variables Configuration - EXAMPLE FILE
+# Copy this file to terraform.tfvars and update with your actual values
+
+# SSH Configuration
+ssh_user     = "your-username"        # Your SSH username
+ssh_password = "YOUR_PASSWORD_HERE"   # Your SSH password
+
+# Node IP Addresses
+master_ip = "192.168.1.10"   # Master node IP
+worker_ips = [
+  "192.168.1.11",            # Worker 1 IP
+  "192.168.1.12"             # Worker 2 IP
+]
+
+# K3s Version (optional)
+# k3s_version = "v1.28.5+k3s1"
+
