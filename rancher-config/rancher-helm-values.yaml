@@ -1,0 +1,13 @@
+hostname: rancher.k3s.local       # Use this temporary hostname for now
+ingress:
+  tls:
+    source: certmanager            # Use Cert-Manager for TLS management
+  extraAnnotations:
+    # Use Traefik (K3s default) to expose the ingress
+    kubernetes.io/ingress.class: traefik
+
+# Link the deployment to the dedicated PVC
+pvc:
+  selector:
+    matchLabels:
+      app: rancher-server

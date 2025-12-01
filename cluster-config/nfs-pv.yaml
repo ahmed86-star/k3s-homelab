@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-agent-pv
+  labels:
+    type: nfs-storage
+spec:
+  capacity:
+    storage: 5Gi # The size you want to reserve
+  accessModes:
+    - ReadWriteMany # Allows multiple agents to access it
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-client
+  nfs:
+    path: "/volume1/k8-data"      # <-- Your path on the NAS
+    server: 192.168.0.139     # <-- Your NAS IP
+    readOnly: false

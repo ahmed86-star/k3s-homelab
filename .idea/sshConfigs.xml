@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="OPEN_SSH" host="192.168.0.115" id="559a43ca-795c-4b6f-8014-536ec3727ba8" port="22" customName="worker3-agent" nameFormat="CUSTOM" username="ahmed1" useOpenSSHConfig="true">
+        <option name="customName" value="worker3-agent" />
+      </sshConfig>
+      <sshConfig authType="OPEN_SSH" host="192.168.0.84" id="63ebf606-2fae-4c24-b0d4-ff4746afd92f" port="22" customName="master-node" nameFormat="CUSTOM" username="ahmed1" useOpenSSHConfig="true">
+        <option name="customName" value="master-node" />
+      </sshConfig>
+      <sshConfig authType="OPEN_SSH" host="192.168.0.235" id="4557d838-4bc5-46f7-ab8e-cd371a2bd579" port="22" customName="worker1-agent" nameFormat="CUSTOM" username="ahmed1" useOpenSSHConfig="true">
+        <option name="customName" value="worker1-agent" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

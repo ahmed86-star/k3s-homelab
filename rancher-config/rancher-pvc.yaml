@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rancher-data-pvc
+  namespace: cattle-system
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: nfs-static-rancher  # <--- THIS MUST BE PRESENT!
+  # volumeName: rancher-data-pv        # <--- OPTIONAL/SAFE TO REMOVE

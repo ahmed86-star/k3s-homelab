@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: rancher-data-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany # Required for Rancher
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-static-rancher  # <-- ADD THIS LINE
+  nfs:
+    server: NAS-HOSTNAME-INTERNAL
+    path: "/volume1/k8-data/rancher-data" # **Ensure this sub-folder exists on your NAS!**

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-agent-deployment
+  labels:
+    app: simple-agent
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-agent
+  template:
+    metadata:
+      labels:
+        app: simple-agent
+    spec:
+      containers:
+        - name: simple-agent-container
+          # IMPORTANT: Use your verified Docker Hub image
+          image: ahmed1z/simple-agent:v1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: GREETING
+              value: "Reporting in from the K3s-Homelab cluster!"
+          volumeMounts: # <-- Step 1: Tell the container where to mount the volume
+            - name: agent-data
+              mountPath: /app/data # Agents will write/read from this directory
+      volumes: "/volume1/k8-data"
+        - name: agent-data
+          persistentVolumeClaim:
+            claimName: nfs-agent-pvc # References the PVC you defined
